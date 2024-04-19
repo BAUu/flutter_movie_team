@@ -11,10 +11,7 @@ class MovieState with _$MovieState {
     @Default([]) List<String> playingTitle,
     @Default([]) List<num> playingVoteAverage,
     @Default([]) List<num> playingId,
-    @Default([]) List<num> searchId,
-    @Default([]) List<String> searchTitle,
-    @Default([]) List<String> searchPosterPath,
-    @Default([]) List<num> searchVoteAverage,
+
   }) = _MovieState;
 
   factory MovieState.fromJson(Map<String, Object?> json) =>

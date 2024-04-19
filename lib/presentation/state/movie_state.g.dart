@@ -24,21 +24,6 @@ _$MovieStateImpl _$$MovieStateImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as num)
               .toList() ??
           const [],
-      searchId:
-          (json['searchId'] as List<dynamic>?)?.map((e) => e as num).toList() ??
-              const [],
-      searchTitle: (json['searchTitle'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      searchPosterPath: (json['searchPosterPath'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      searchVoteAverage: (json['searchVoteAverage'] as List<dynamic>?)
-              ?.map((e) => e as num)
-              .toList() ??
-          const [],
     );
 
 Map<String, dynamic> _$$MovieStateImplToJson(_$MovieStateImpl instance) =>
@@ -47,8 +32,4 @@ Map<String, dynamic> _$$MovieStateImplToJson(_$MovieStateImpl instance) =>
       'playingTitle': instance.playingTitle,
       'playingVoteAverage': instance.playingVoteAverage,
       'playingId': instance.playingId,
-      'searchId': instance.searchId,
-      'searchTitle': instance.searchTitle,
-      'searchPosterPath': instance.searchPosterPath,
-      'searchVoteAverage': instance.searchVoteAverage,
     };
