@@ -10,6 +10,8 @@ class MovieDetailState with _$MovieDetailState {
     @Default('') String detailPosterPath,
     @Default('') String detailTagline,
     @Default('') String detailTitle,
+    @Default(0) num detailVoteAverage,
+
   }) = _MovieDetailState;
 
   factory MovieDetailState.fromJson(Map<String, dynamic> json) =>
