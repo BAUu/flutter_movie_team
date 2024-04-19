@@ -89,9 +89,9 @@ class MovieDetailDto {
   List<String>? originCountry;
   String? originalLanguage;
   String? originalTitle;
-  String? overview;
+  String? overview; // 줄거리
   num? popularity;
-  String? posterPath;
+  String? posterPath; // 표지
   List<ProductionCompanies>? productionCompanies;
   List<ProductionCountries>? productionCountries;
   String? releaseDate;
@@ -99,10 +99,10 @@ class MovieDetailDto {
   num? runtime;
   List<SpokenLanguages>? spokenLanguages;
   String? status;
-  String? tagline;
-  String? title;
+  String? tagline; // 부제
+  String? title; // 제목
   bool? video;
-  num? voteAverage;
+  num? voteAverage; // 평점
   num? voteCount;
 
   Map<String, dynamic> toJson() {
