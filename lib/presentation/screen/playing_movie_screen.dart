@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MovieView extends StatefulWidget {
-  const MovieView({super.key});
+class PlayingMovieScreen extends StatefulWidget {
+  const PlayingMovieScreen({super.key});
 
   @override
-  State<MovieView> createState() => _MovieViewState();
+  State<PlayingMovieScreen> createState() => _PlayingMovieScreenState();
 }
 
-class _MovieViewState extends State<MovieView> {
+class _PlayingMovieScreenState extends State<PlayingMovieScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
