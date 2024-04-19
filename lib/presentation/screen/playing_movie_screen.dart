@@ -1,45 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_team/presentation/screen/main_screen.dart';
+import 'package:flutter_movie_team/presentation/screen/search_movie_screen.dart';
+import 'package:flutter_movie_team/presentation/viewmodel/playing_movie_view_model.dart';
+import 'package:provider/provider.dart';
 
 class PlayingMovieScreen extends StatefulWidget {
   const PlayingMovieScreen({super.key});
 
   @override
   State<PlayingMovieScreen> createState() => _PlayingMovieScreenState();
+
 }
 
 class _PlayingMovieScreenState extends State<PlayingMovieScreen> {
+  int _selectedIndex = 0;
+
+  final List<Widget> tab = [
+    MainScreen(),
+    SearchMovieScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('영화 정보 앱'),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: GridView.builder(
-            itemCount: 20,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 9 / 16,
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 10.0,
-            ),
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {},
-                child: SizedBox(
-                  child: Column(
-                    children: [
-                      Image.asset('assets/images/camera.png'),
-                      const Text('제목'),
-                      const Text('평점'),
-                    ],
-                  ),
-                ),
-              );
-            }),
-      ),
+      body: tab[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const [
           BottomNavigationBarItem(
               icon: ImageIcon(AssetImage('assets/images/camera.png')),

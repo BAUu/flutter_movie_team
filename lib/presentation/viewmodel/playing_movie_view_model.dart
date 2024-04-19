@@ -21,5 +21,6 @@ class PlayingMovieViewModel with ChangeNotifier {
       playingTitle: playing.map((e) => e.title).toList(),
       playingVoteAverage: playing.map((e) => e.voteAverage).toList(),
     );
+    notifyListeners();
   }
 }
