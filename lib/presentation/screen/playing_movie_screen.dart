@@ -18,7 +18,7 @@ class _PlayingMovieScreenState extends State<PlayingMovieScreen> {
         width: double.infinity,
         child: GridView.builder(
             itemCount: 20,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 9 / 16,
               crossAxisSpacing: 10.0,
@@ -31,8 +31,8 @@ class _PlayingMovieScreenState extends State<PlayingMovieScreen> {
                   child: Column(
                     children: [
                       Image.asset('assets/images/camera.png'),
-                      Text('제목'),
-                      Text('평점'),
+                      const Text('제목'),
+                      const Text('평점'),
                     ],
                   ),
                 ),
@@ -40,7 +40,7 @@ class _PlayingMovieScreenState extends State<PlayingMovieScreen> {
             }),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
               icon: ImageIcon(AssetImage('assets/images/camera.png')),
               label: '상영중'),
