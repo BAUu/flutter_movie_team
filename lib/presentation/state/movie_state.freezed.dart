@@ -20,10 +20,6 @@ MovieState _$MovieStateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieState {
-  String get detailOverView => throw _privateConstructorUsedError;
-  String get detailPosterPath => throw _privateConstructorUsedError;
-  String get detailTagline => throw _privateConstructorUsedError;
-  String get detailTitle => throw _privateConstructorUsedError;
   List<String> get playingPosterPath => throw _privateConstructorUsedError;
   List<String> get playingTitle => throw _privateConstructorUsedError;
   List<num> get playingVoteAverage => throw _privateConstructorUsedError;
@@ -46,11 +42,7 @@ abstract class $MovieStateCopyWith<$Res> {
       _$MovieStateCopyWithImpl<$Res, MovieState>;
   @useResult
   $Res call(
-      {String detailOverView,
-      String detailPosterPath,
-      String detailTagline,
-      String detailTitle,
-      List<String> playingPosterPath,
+      {List<String> playingPosterPath,
       List<String> playingTitle,
       List<num> playingVoteAverage,
       List<num> playingId,
@@ -73,10 +65,6 @@ class _$MovieStateCopyWithImpl<$Res, $Val extends MovieState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? detailOverView = null,
-    Object? detailPosterPath = null,
-    Object? detailTagline = null,
-    Object? detailTitle = null,
     Object? playingPosterPath = null,
     Object? playingTitle = null,
     Object? playingVoteAverage = null,
@@ -87,22 +75,6 @@ class _$MovieStateCopyWithImpl<$Res, $Val extends MovieState>
     Object? searchVoteAverage = null,
   }) {
     return _then(_value.copyWith(
-      detailOverView: null == detailOverView
-          ? _value.detailOverView
-          : detailOverView // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailPosterPath: null == detailPosterPath
-          ? _value.detailPosterPath
-          : detailPosterPath // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailTagline: null == detailTagline
-          ? _value.detailTagline
-          : detailTagline // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailTitle: null == detailTitle
-          ? _value.detailTitle
-          : detailTitle // ignore: cast_nullable_to_non_nullable
-              as String,
       playingPosterPath: null == playingPosterPath
           ? _value.playingPosterPath
           : playingPosterPath // ignore: cast_nullable_to_non_nullable
@@ -148,11 +120,7 @@ abstract class _$$MovieStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String detailOverView,
-      String detailPosterPath,
-      String detailTagline,
-      String detailTitle,
-      List<String> playingPosterPath,
+      {List<String> playingPosterPath,
       List<String> playingTitle,
       List<num> playingVoteAverage,
       List<num> playingId,
@@ -173,10 +141,6 @@ class __$$MovieStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? detailOverView = null,
-    Object? detailPosterPath = null,
-    Object? detailTagline = null,
-    Object? detailTitle = null,
     Object? playingPosterPath = null,
     Object? playingTitle = null,
     Object? playingVoteAverage = null,
@@ -187,22 +151,6 @@ class __$$MovieStateImplCopyWithImpl<$Res>
     Object? searchVoteAverage = null,
   }) {
     return _then(_$MovieStateImpl(
-      detailOverView: null == detailOverView
-          ? _value.detailOverView
-          : detailOverView // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailPosterPath: null == detailPosterPath
-          ? _value.detailPosterPath
-          : detailPosterPath // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailTagline: null == detailTagline
-          ? _value.detailTagline
-          : detailTagline // ignore: cast_nullable_to_non_nullable
-              as String,
-      detailTitle: null == detailTitle
-          ? _value.detailTitle
-          : detailTitle // ignore: cast_nullable_to_non_nullable
-              as String,
       playingPosterPath: null == playingPosterPath
           ? _value._playingPosterPath
           : playingPosterPath // ignore: cast_nullable_to_non_nullable
@@ -243,11 +191,7 @@ class __$$MovieStateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieStateImpl implements _MovieState {
   const _$MovieStateImpl(
-      {this.detailOverView = '',
-      this.detailPosterPath = '',
-      this.detailTagline = '',
-      this.detailTitle = '',
-      final List<String> playingPosterPath = const [],
+      {final List<String> playingPosterPath = const [],
       final List<String> playingTitle = const [],
       final List<num> playingVoteAverage = const [],
       final List<num> playingId = const [],
@@ -267,18 +211,6 @@ class _$MovieStateImpl implements _MovieState {
   factory _$MovieStateImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieStateImplFromJson(json);
 
-  @override
-  @JsonKey()
-  final String detailOverView;
-  @override
-  @JsonKey()
-  final String detailPosterPath;
-  @override
-  @JsonKey()
-  final String detailTagline;
-  @override
-  @JsonKey()
-  final String detailTitle;
   final List<String> _playingPosterPath;
   @override
   @JsonKey()
@@ -357,7 +289,7 @@ class _$MovieStateImpl implements _MovieState {
 
   @override
   String toString() {
-    return 'MovieState(detailOverView: $detailOverView, detailPosterPath: $detailPosterPath, detailTagline: $detailTagline, detailTitle: $detailTitle, playingPosterPath: $playingPosterPath, playingTitle: $playingTitle, playingVoteAverage: $playingVoteAverage, playingId: $playingId, searchId: $searchId, searchTitle: $searchTitle, searchPosterPath: $searchPosterPath, searchVoteAverage: $searchVoteAverage)';
+    return 'MovieState(playingPosterPath: $playingPosterPath, playingTitle: $playingTitle, playingVoteAverage: $playingVoteAverage, playingId: $playingId, searchId: $searchId, searchTitle: $searchTitle, searchPosterPath: $searchPosterPath, searchVoteAverage: $searchVoteAverage)';
   }
 
   @override
@@ -365,14 +297,6 @@ class _$MovieStateImpl implements _MovieState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieStateImpl &&
-            (identical(other.detailOverView, detailOverView) ||
-                other.detailOverView == detailOverView) &&
-            (identical(other.detailPosterPath, detailPosterPath) ||
-                other.detailPosterPath == detailPosterPath) &&
-            (identical(other.detailTagline, detailTagline) ||
-                other.detailTagline == detailTagline) &&
-            (identical(other.detailTitle, detailTitle) ||
-                other.detailTitle == detailTitle) &&
             const DeepCollectionEquality()
                 .equals(other._playingPosterPath, _playingPosterPath) &&
             const DeepCollectionEquality()
@@ -394,10 +318,6 @@ class _$MovieStateImpl implements _MovieState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      detailOverView,
-      detailPosterPath,
-      detailTagline,
-      detailTitle,
       const DeepCollectionEquality().hash(_playingPosterPath),
       const DeepCollectionEquality().hash(_playingTitle),
       const DeepCollectionEquality().hash(_playingVoteAverage),
@@ -423,11 +343,7 @@ class _$MovieStateImpl implements _MovieState {
 
 abstract class _MovieState implements MovieState {
   const factory _MovieState(
-      {final String detailOverView,
-      final String detailPosterPath,
-      final String detailTagline,
-      final String detailTitle,
-      final List<String> playingPosterPath,
+      {final List<String> playingPosterPath,
       final List<String> playingTitle,
       final List<num> playingVoteAverage,
       final List<num> playingId,
@@ -439,14 +355,6 @@ abstract class _MovieState implements MovieState {
   factory _MovieState.fromJson(Map<String, dynamic> json) =
       _$MovieStateImpl.fromJson;
 
-  @override
-  String get detailOverView;
-  @override
-  String get detailPosterPath;
-  @override
-  String get detailTagline;
-  @override
-  String get detailTitle;
   @override
   List<String> get playingPosterPath;
   @override

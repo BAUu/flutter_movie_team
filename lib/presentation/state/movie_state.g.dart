@@ -8,10 +8,6 @@ part of 'movie_state.dart';
 
 _$MovieStateImpl _$$MovieStateImplFromJson(Map<String, dynamic> json) =>
     _$MovieStateImpl(
-      detailOverView: json['detailOverView'] as String? ?? '',
-      detailPosterPath: json['detailPosterPath'] as String? ?? '',
-      detailTagline: json['detailTagline'] as String? ?? '',
-      detailTitle: json['detailTitle'] as String? ?? '',
       playingPosterPath: (json['playingPosterPath'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -47,10 +43,6 @@ _$MovieStateImpl _$$MovieStateImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$MovieStateImplToJson(_$MovieStateImpl instance) =>
     <String, dynamic>{
-      'detailOverView': instance.detailOverView,
-      'detailPosterPath': instance.detailPosterPath,
-      'detailTagline': instance.detailTagline,
-      'detailTitle': instance.detailTitle,
       'playingPosterPath': instance.playingPosterPath,
       'playingTitle': instance.playingTitle,
       'playingVoteAverage': instance.playingVoteAverage,
