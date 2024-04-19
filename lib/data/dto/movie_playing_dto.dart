@@ -84,11 +84,11 @@ class Results {
   String? originalTitle;
   String? overview;
   num? popularity;
-  String? posterPath;
+  String? posterPath; // 상영중 표지
   String? releaseDate;
-  String? title;
+  String? title; // 상영중 제목
   bool? video;
-  num? voteAverage;
+  num? voteAverage; // 상영중 평점
   num? voteCount;
 
   Map<String, dynamic> toJson() {
