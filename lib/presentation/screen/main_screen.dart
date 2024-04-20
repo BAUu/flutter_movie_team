@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_team/presentation/viewmodel/detail_movie_view_model.dart';
-import 'package:provider/provider.dart';
-
-import '../viewmodel/playing_movie_view_model.dart';
-import 'detail_movie_screen.dart';
+import 'package:flutter_movie_team/presentation/screen/playing_movie_screen.dart';
+import 'package:flutter_movie_team/presentation/screen/search_movie_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,50 +10,33 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
 
-  @override
-  void initState() {
-    super.initState();
-    context.read<PlayingMovieViewModel>().getPlaying();
+  final List<Widget> _screens = [
+    PlayingMovieScreen(),
+    SearchMovieScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final viewmodel = context.watch<PlayingMovieViewModel>();
-    final state = viewmodel.state;
-
     return Scaffold(
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          children: [
-            Expanded(
-              child: GridView.builder(
-                itemCount: 20,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 9 / 16,
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 10.0,
-                ),
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailMovieScreen(id: state.playingId[index])));
-                    },
-                    child: SizedBox(
-                      child: Column(
-                        children: [
-                          Image.network('https://image.tmdb.org/t/p/w500/${state.playingPosterPath[index]}'),
-                          Text('${state.playingTitle[index]}'),
-                          Text('${state.playingVoteAverage[index]}'),
-                        ],
-                      ),
-                    ),
-                  );
-                }),
-            ),
-        ]),
+      appBar: AppBar(
+        title: Text('영화 정보 앱'),
+      ),
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(icon: ImageIcon(AssetImage('assets/images/camera.png')), label: '상영중'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: '검색'),
+        ],
       ),
     );
   }

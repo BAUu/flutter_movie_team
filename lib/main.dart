@@ -41,12 +41,14 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_) => PlayingMovieViewModel(
               playingMovieUseCase: PlayingMovieUseCase(
-                movieRepositoryImpl: MovieRepositoryImpl(dataSource: MovieDataSource()),
+                movieRepositoryImpl: MovieRepositoryImpl(
+                  dataSource: MovieDataSource(),
+                ),
               ),
             ),
           ),
         ],
-        child: const PlayingMovieScreen(),
+        child: const MainScreen(),
       ),
     );
   }
